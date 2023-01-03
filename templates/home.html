@@ -1,5 +1,12 @@
 {% extends "base.html" %} 
 
 {% block content %}
-<h1>Welcome to Shopping List Automation</h1>
+<div class="container mt-5 text-center">
+    <h1>Welcome to Shopping List Automation</h1>
+
+    <form action="{% url 'recipe' %}" method="get" class="form-inline">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
 {% endblock %}

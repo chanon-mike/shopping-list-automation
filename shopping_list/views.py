@@ -1,5 +1,13 @@
-from django.views.generic import TemplateView
+from django.views.generic import FormView, TemplateView
 
-# Create your views here.
-class HomeView(TemplateView):
+from .forms import RecipeSearchForm
+
+
+class HomeView(FormView):
     template_name = 'home.html'
+    form_class = RecipeSearchForm
+    success_url = '/recipe/'
+
+
+class RecipeView(TemplateView):
+    template_name = 'recipe_ranking.html'
